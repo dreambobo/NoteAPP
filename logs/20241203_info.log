@@ -224,3 +224,229 @@ startIndex字段缺失为None；
 【INFO】14:43:04:671 - business_requests.py : 43 >> Received code : 401
 【INFO】14:43:04:673 - business_requests.py : 44 >> Received body : {'errorCode': -2010, 'errorMsg': ''}
 【CASE】14:43:04:674 - caseMsgLogs.py : 86 >> Case run time:0.21s
+【INFO】15:14:51:954 - del_note.py : 27 >> 删除所有分组
+【CASE】15:14:52:134 - caseMsgLogs.py : 77 >> ==========================================================================================
+【CASE】15:14:52:135 - caseMsgLogs.py : 81 >> Method Name:testCase_must_key_remove_0_groupId,Class Name:SetNoteGroupInput
+【CASE】15:14:52:137 - caseMsgLogs.py : 82 >> Test Description:必填项缺失 [with key='groupId']
+【INFO】15:14:52:138 - business_requests.py : 15 >> Request url: http://note-api.wps.cn/v3/notesvr/set/notegroup
+【INFO】15:14:52:140 - business_requests.py : 16 >> Request headers :{'Cookie': 'wps_sid=V02SFV_WGVWoA-YKBmvvbkQbZOY1slA00a6bef6e004c5b9c89', 'x-user-key': '1281072265', 'Content-Type': 'application/json'}
+【INFO】15:14:52:142 - business_requests.py : 17 >> Request body : {'groupName': 'testGroup', 'order': 0}
+【INFO】15:14:52:190 - business_requests.py : 23 >> Received code : 500
+【INFO】15:14:52:191 - business_requests.py : 24 >> Received body : {'errorCode': -7, 'errorMsg': '参数不合法！'}
+【CASE】15:14:52:192 - caseMsgLogs.py : 86 >> Case run time:0.06s
+【INFO】15:14:52:256 - del_note.py : 27 >> 删除所有分组
+【CASE】15:14:52:257 - caseMsgLogs.py : 77 >> ==========================================================================================
+【CASE】15:14:52:257 - caseMsgLogs.py : 81 >> Method Name:testCase_must_key_remove_1_groupName,Class Name:SetNoteGroupInput
+【CASE】15:14:52:258 - caseMsgLogs.py : 82 >> Test Description:必填项缺失 [with key='groupName']
+【INFO】15:14:52:259 - business_requests.py : 15 >> Request url: http://note-api.wps.cn/v3/notesvr/set/notegroup
+【INFO】15:14:52:260 - business_requests.py : 16 >> Request headers :{'Cookie': 'wps_sid=V02SFV_WGVWoA-YKBmvvbkQbZOY1slA00a6bef6e004c5b9c89', 'x-user-key': '1281072265', 'Content-Type': 'application/json'}
+【INFO】15:14:52:261 - business_requests.py : 17 >> Request body : {'groupId': '1733210092000_groupId', 'order': 0}
+【INFO】15:14:52:304 - business_requests.py : 23 >> Received code : 500
+【INFO】15:14:52:307 - business_requests.py : 24 >> Received body : {'errorCode': -7, 'errorMsg': '参数不合法！'}
+【CASE】15:14:52:308 - caseMsgLogs.py : 86 >> Case run time:0.05s
+【INFO】15:14:52:370 - del_note.py : 27 >> 删除所有分组
+【CASE】15:14:52:373 - caseMsgLogs.py : 77 >> ==========================================================================================
+【CASE】15:14:52:374 - caseMsgLogs.py : 81 >> Method Name:testCase_major,Class Name:SetNoteGroupInput
+【CASE】15:14:52:375 - caseMsgLogs.py : 82 >> Test Description:新增分组接口，主流程：用户新增分组
+【INFO】15:14:52:376 - test_group_major.py : 33 >> 用户A请求新增分组接口,构建1个分组数据
+【INFO】15:14:52:440 - test_group_major.py : 36 >> 分组数据下创建1个便签
+【INFO】15:14:52:530 - test_group_major.py : 38 >> 获取分组列表
+【INFO】15:14:52:533 - business_requests.py : 15 >> Request url: http://note-api.wps.cn/v3/notesvr/get/notegroup
+【INFO】15:14:52:534 - business_requests.py : 16 >> Request headers :{'cookie': 'wps_sid=V02SFV_WGVWoA-YKBmvvbkQbZOY1slA00a6bef6e004c5b9c89', 'x-user-key': '1281072265', 'Content-Type': 'application/json'}
+【INFO】15:14:52:536 - business_requests.py : 17 >> Request body : {'excludeInValid': True}
+【INFO】15:14:52:600 - business_requests.py : 23 >> Received code : 200
+【INFO】15:14:52:603 - business_requests.py : 24 >> Received body : {'noteGroups': [{'userId': '1281072265', 'groupId': '1733210092378_gid', 'groupName': 'test', 'order': 0, 'valid': 1, 'updateTime': 1733210092669}], 'requestTime': 1733210092909}
+【CASE】15:14:52:604 - caseMsgLogs.py : 86 >> Case run time:0.23s
+【INFO】15:14:52:606 - test01_homepage_major.py : 24 >> 用例初始化，清理首页便签数据
+【INFO】15:14:52:681 - del_note.py : 19 >> 删除首页所有便签-完成
+【CASE】15:14:52:749 - caseMsgLogs.py : 77 >> ==========================================================================================
+【CASE】15:14:52:752 - caseMsgLogs.py : 81 >> Method Name:testCase001_major,Class Name:TestHomePage
+【CASE】15:14:52:753 - caseMsgLogs.py : 82 >> Test Description:获取首页便签列表_主流程
+【INFO】15:14:52:754 - test01_homepage_major.py : 31 >> 创建首页1条便签
+【INFO】15:14:52:901 - test01_homepage_major.py : 33 >> 获取首页便签列表
+【INFO】15:14:52:904 - business_requests.py : 36 >> Request url: http://note-api.wps.cn/v3/notesvr/user/1281072265/home/startindex/0/rows/0/notes
+【INFO】15:14:52:905 - business_requests.py : 37 >> Request headers :{'cookie': 'wps_sid=V02SFV_WGVWoA-YKBmvvbkQbZOY1slA00a6bef6e004c5b9c89', 'x-user-key': '1281072265'}
+【INFO】15:14:52:974 - business_requests.py : 43 >> Received code : 200
+【INFO】15:14:52:976 - business_requests.py : 44 >> Received body : {'responseTime': 0, 'webNotes': [{'noteId': '1733210092755_nid', 'createTime': 1733210093240, 'star': 0, 'remindTime': 0, 'remindType': 0, 'infoVersion': 1, 'infoUpdateTime': 1733210093240, 'groupId': None, 'title': 'test', 'summary': 'test', 'thumbnail': None, 'contentVersion': 1, 'contentUpdateTime': 1733210093206}]}
+【CASE】15:14:52:978 - caseMsgLogs.py : 86 >> Case run time:0.23s
+【INFO】15:14:52:979 - test02_Homepage_handle.py : 24 >> 用例初始化，清理首页便签数据
+【INFO】15:14:53:049 - del_note.py : 19 >> 删除首页所有便签-完成
+【CASE】15:14:53:113 - caseMsgLogs.py : 77 >> ==========================================================================================
+【CASE】15:14:53:115 - caseMsgLogs.py : 81 >> Method Name:testCase001_handle_gethomepage_rows,Class Name:TestHomePage
+【CASE】15:14:53:116 - caseMsgLogs.py : 82 >> Test Description:获取首页便签。
+handle：数值限制，当前用户存在2条便签，rows=1，查询首页便签
+预期：返回1条便签。
+【INFO】15:14:53:117 - test02_Homepage_handle.py : 31 >> 创建2条便签
+【CASE】15:14:53:409 - test02_Homepage_handle.py : 33 >> 获取首页便签,rows=1
+【INFO】15:14:53:411 - business_requests.py : 36 >> Request url: http://note-api.wps.cn/v3/notesvr/user/1281072265/home/startindex/0/rows/1/notes
+【INFO】15:14:53:413 - business_requests.py : 37 >> Request headers :{'cookie': 'wps_sid=V02SFV_WGVWoA-YKBmvvbkQbZOY1slA00a6bef6e004c5b9c89', 'x-user-key': '1281072265'}
+【INFO】15:14:53:491 - business_requests.py : 43 >> Received code : 200
+【INFO】15:14:53:494 - business_requests.py : 44 >> Received body : {'responseTime': 0, 'webNotes': [{'noteId': '1733210093253_nid', 'createTime': 1733210093579, 'star': 0, 'remindTime': 0, 'remindType': 0, 'infoVersion': 1, 'infoUpdateTime': 1733210093579, 'groupId': None, 'title': 'test', 'summary': 'test', 'thumbnail': None, 'contentVersion': 1, 'contentUpdateTime': 1733210093717}]}
+【CASE】15:14:53:495 - test02_Homepage_handle.py : 39 >> Received code : 200
+【CASE】15:14:53:497 - test02_Homepage_handle.py : 40 >> Received body : {'responseTime': 0, 'webNotes': [{'noteId': '1733210093253_nid', 'createTime': 1733210093579, 'star': 0, 'remindTime': 0, 'remindType': 0, 'infoVersion': 1, 'infoUpdateTime': 1733210093579, 'groupId': None, 'title': 'test', 'summary': 'test', 'thumbnail': None, 'contentVersion': 1, 'contentUpdateTime': 1733210093717}]}
+【CASE】15:14:53:498 - caseMsgLogs.py : 86 >> Case run time:0.39s
+【INFO】15:14:53:500 - test02_Homepage_handle.py : 24 >> 用例初始化，清理首页便签数据
+【INFO】15:14:53:568 - del_note.py : 19 >> 删除首页所有便签-完成
+【CASE】15:14:53:837 - caseMsgLogs.py : 77 >> ==========================================================================================
+【CASE】15:14:53:839 - caseMsgLogs.py : 81 >> Method Name:testCase002_handle_gethomepage_startindx,Class Name:TestHomePage
+【CASE】15:14:53:840 - caseMsgLogs.py : 82 >> Test Description:获取首页便签
+handle：数值限制；
+起始索引从1开始startindx：1，查询首页便签；
+预期：索引位置从1开始。
+【INFO】15:14:53:841 - test02_Homepage_handle.py : 77 >> 列表内构建2条数据
+【INFO】15:14:54:140 - business_requests.py : 36 >> Request url: http://note-api.wps.cn/v3/notesvr/user/1281072265/home/startindex/1/rows/0/notes
+【INFO】15:14:54:143 - business_requests.py : 37 >> Request headers :{'cookie': 'wps_sid=V02SFV_WGVWoA-YKBmvvbkQbZOY1slA00a6bef6e004c5b9c89', 'x-user-key': '1281072265'}
+【INFO】15:14:54:205 - business_requests.py : 43 >> Received code : 200
+【INFO】15:14:54:208 - business_requests.py : 44 >> Received body : {'responseTime': 0, 'webNotes': [{'noteId': '1733210093842_nid', 'createTime': 1733210094174, 'star': 0, 'remindTime': 0, 'remindType': 0, 'infoVersion': 1, 'infoUpdateTime': 1733210094174, 'groupId': None, 'title': 'test', 'summary': 'test', 'thumbnail': None, 'contentVersion': 1, 'contentUpdateTime': 1733210094303}]}
+【CASE】15:14:54:209 - caseMsgLogs.py : 86 >> Case run time:0.37s
+【INFO】15:14:54:211 - test02_Homepage_handle.py : 24 >> 用例初始化，清理首页便签数据
+【INFO】15:14:54:342 - del_note.py : 19 >> 删除首页所有便签-完成
+【CASE】15:14:54:476 - caseMsgLogs.py : 77 >> ==========================================================================================
+【CASE】15:14:54:478 - caseMsgLogs.py : 81 >> Method Name:testCase003_handle_startindex_notExists,Class Name:TestHomePage
+【CASE】15:14:54:480 - caseMsgLogs.py : 82 >> Test Description:获取首页便签
+startIndex字段缺失为None；
+预期：返回404。
+【INFO】15:14:54:481 - test02_Homepage_handle.py : 111 >> 列表内构建1条数据
+【INFO】15:14:54:616 - business_requests.py : 36 >> Request url: http://note-api.wps.cn/v3/notesvr/user/1281072265/home/startindex/rows/0/notes
+【INFO】15:14:54:619 - business_requests.py : 37 >> Request headers :{'cookie': 'wps_sid=V02SFV_WGVWoA-YKBmvvbkQbZOY1slA00a6bef6e004c5b9c89', 'x-user-key': '1281072265'}
+【INFO】15:14:54:665 - business_requests.py : 43 >> Received code : 404
+【INFO】15:14:54:668 - business_requests.py : 44 >> Received body : {'timestamp': '2024-12-03T07:14:54.976+0000', 'status': 404, 'error': 'Not Found', 'message': 'No message available', 'path': '/v3/notesvr/user/1281072265/home/startindex/rows/0/notes'}
+【CASE】15:14:54:670 - caseMsgLogs.py : 86 >> Case run time:0.19s
+【INFO】15:14:54:671 - test02_Homepage_handle.py : 24 >> 用例初始化，清理首页便签数据
+【INFO】15:14:54:738 - del_note.py : 19 >> 删除首页所有便签-完成
+【CASE】15:14:54:810 - caseMsgLogs.py : 77 >> ==========================================================================================
+【CASE】15:14:54:813 - caseMsgLogs.py : 81 >> Method Name:testCase004_handle_rows_noexists,Class Name:TestHomePage
+【CASE】15:14:54:814 - caseMsgLogs.py : 82 >> Test Description:获取首页便签
+startIndex字段缺失为None；
+预期：返回404。
+【INFO】15:14:54:815 - test02_Homepage_handle.py : 125 >> 列表内构建1条数据
+【INFO】15:14:54:956 - business_requests.py : 36 >> Request url: http://note-api.wps.cn/v3/notesvr/user/1281072265/home/startindex/0/rows/notes
+【INFO】15:14:54:959 - business_requests.py : 37 >> Request headers :{'cookie': 'wps_sid=V02SFV_WGVWoA-YKBmvvbkQbZOY1slA00a6bef6e004c5b9c89', 'x-user-key': '1281072265'}
+【INFO】15:14:55:002 - business_requests.py : 43 >> Received code : 404
+【INFO】15:14:55:005 - business_requests.py : 44 >> Received body : {'timestamp': '2024-12-03T07:14:55.269+0000', 'status': 404, 'error': 'Not Found', 'message': 'No message available', 'path': '/v3/notesvr/user/1281072265/home/startindex/0/rows/notes'}
+【CASE】15:14:55:006 - caseMsgLogs.py : 86 >> Case run time:0.20s
+【INFO】15:14:55:007 - test02_Homepage_handle.py : 24 >> 用例初始化，清理首页便签数据
+【INFO】15:14:55:078 - del_note.py : 19 >> 删除首页所有便签-完成
+【CASE】15:14:55:175 - caseMsgLogs.py : 77 >> ==========================================================================================
+【CASE】15:14:55:177 - caseMsgLogs.py : 81 >> Method Name:testCase005_handle_extra_permission,Class Name:TestHomePage
+【CASE】15:14:55:178 - caseMsgLogs.py : 82 >> Test Description:用户B获取用户A首页便签
+预期：返回401。
+【INFO】15:14:55:180 - test02_Homepage_handle.py : 138 >> 用户A列表内构建1条数据
+【INFO】15:14:55:321 - business_requests.py : 36 >> Request url: http://note-api.wps.cn/v3/notesvr/user/1281072265/home/startindex/0/rows/0/notes
+【INFO】15:14:55:323 - business_requests.py : 37 >> Request headers :{'cookie': 'wps_sid=V02SFV_WGVWoA-YKBmvvbkQbZOY1slA00a6bef6e004c5b9c90', 'x-user-key': '1281072264'}
+【INFO】15:14:55:411 - business_requests.py : 43 >> Received code : 401
+【INFO】15:14:55:414 - business_requests.py : 44 >> Received body : {'errorCode': -2010, 'errorMsg': ''}
+【CASE】15:14:55:415 - caseMsgLogs.py : 86 >> Case run time:0.24s
+【INFO】15:15:09:419 - del_note.py : 27 >> 删除所有分组
+【CASE】15:15:09:573 - caseMsgLogs.py : 77 >> ==========================================================================================
+【CASE】15:15:09:575 - caseMsgLogs.py : 81 >> Method Name:testCase_must_key_remove_0_groupId,Class Name:SetNoteGroupInput
+【CASE】15:15:09:576 - caseMsgLogs.py : 82 >> Test Description:必填项缺失 [with key='groupId']
+【INFO】15:15:09:578 - business_requests.py : 15 >> Request url: http://note-api.wps.cn/v3/notesvr/set/notegroup
+【INFO】15:15:09:580 - business_requests.py : 16 >> Request headers :{'Cookie': 'wps_sid=V02SFV_WGVWoA-YKBmvvbkQbZOY1slA00a6bef6e004c5b9c89', 'x-user-key': '1281072265', 'Content-Type': 'application/json'}
+【INFO】15:15:09:582 - business_requests.py : 17 >> Request body : {'groupName': 'testGroup', 'order': 0}
+【INFO】15:15:09:621 - business_requests.py : 23 >> Received code : 500
+【INFO】15:15:09:623 - business_requests.py : 24 >> Received body : {'errorCode': -7, 'errorMsg': '参数不合法！'}
+【CASE】15:15:09:624 - caseMsgLogs.py : 86 >> Case run time:0.05s
+【INFO】15:15:09:688 - del_note.py : 27 >> 删除所有分组
+【CASE】15:15:09:689 - caseMsgLogs.py : 77 >> ==========================================================================================
+【CASE】15:15:09:690 - caseMsgLogs.py : 81 >> Method Name:testCase_must_key_remove_1_groupName,Class Name:SetNoteGroupInput
+【CASE】15:15:09:691 - caseMsgLogs.py : 82 >> Test Description:必填项缺失 [with key='groupName']
+【INFO】15:15:09:692 - business_requests.py : 15 >> Request url: http://note-api.wps.cn/v3/notesvr/set/notegroup
+【INFO】15:15:09:693 - business_requests.py : 16 >> Request headers :{'Cookie': 'wps_sid=V02SFV_WGVWoA-YKBmvvbkQbZOY1slA00a6bef6e004c5b9c89', 'x-user-key': '1281072265', 'Content-Type': 'application/json'}
+【INFO】15:15:09:695 - business_requests.py : 17 >> Request body : {'groupId': '1733210109000_groupId', 'order': 0}
+【INFO】15:15:09:743 - business_requests.py : 23 >> Received code : 500
+【INFO】15:15:09:746 - business_requests.py : 24 >> Received body : {'errorCode': -7, 'errorMsg': '参数不合法！'}
+【CASE】15:15:09:749 - caseMsgLogs.py : 86 >> Case run time:0.06s
+【INFO】15:15:09:830 - del_note.py : 27 >> 删除所有分组
+【CASE】15:15:09:833 - caseMsgLogs.py : 77 >> ==========================================================================================
+【CASE】15:15:09:834 - caseMsgLogs.py : 81 >> Method Name:testCase_major,Class Name:SetNoteGroupInput
+【CASE】15:15:09:836 - caseMsgLogs.py : 82 >> Test Description:新增分组接口，主流程：用户新增分组
+【INFO】15:15:09:837 - test_group_major.py : 33 >> 用户A请求新增分组接口,构建1个分组数据
+【INFO】15:15:09:914 - test_group_major.py : 36 >> 分组数据下创建1个便签
+【INFO】15:15:09:999 - test_group_major.py : 38 >> 获取分组列表
+【INFO】15:15:10:001 - business_requests.py : 15 >> Request url: http://note-api.wps.cn/v3/notesvr/get/notegroup
+【INFO】15:15:10:003 - business_requests.py : 16 >> Request headers :{'cookie': 'wps_sid=V02SFV_WGVWoA-YKBmvvbkQbZOY1slA00a6bef6e004c5b9c89', 'x-user-key': '1281072265', 'Content-Type': 'application/json'}
+【INFO】15:15:10:004 - business_requests.py : 17 >> Request body : {'excludeInValid': True}
+【INFO】15:15:10:071 - business_requests.py : 23 >> Received code : 200
+【INFO】15:15:10:072 - business_requests.py : 24 >> Received body : {'noteGroups': [{'userId': '1281072265', 'groupId': '1733210109838_gid', 'groupName': 'test', 'order': 0, 'valid': 1, 'updateTime': 1733210110221}], 'requestTime': 1733210110380}
+【CASE】15:15:10:074 - caseMsgLogs.py : 86 >> Case run time:0.24s
+【INFO】15:15:10:075 - test01_homepage_major.py : 24 >> 用例初始化，清理首页便签数据
+【INFO】15:15:10:153 - del_note.py : 19 >> 删除首页所有便签-完成
+【CASE】15:15:10:238 - caseMsgLogs.py : 77 >> ==========================================================================================
+【CASE】15:15:10:240 - caseMsgLogs.py : 81 >> Method Name:testCase001_major,Class Name:TestHomePage
+【CASE】15:15:10:241 - caseMsgLogs.py : 82 >> Test Description:获取首页便签列表_主流程
+【INFO】15:15:10:243 - test01_homepage_major.py : 31 >> 创建首页1条便签
+【INFO】15:15:10:448 - test01_homepage_major.py : 33 >> 获取首页便签列表
+【INFO】15:15:10:451 - business_requests.py : 36 >> Request url: http://note-api.wps.cn/v3/notesvr/user/1281072265/home/startindex/0/rows/0/notes
+【INFO】15:15:10:452 - business_requests.py : 37 >> Request headers :{'cookie': 'wps_sid=V02SFV_WGVWoA-YKBmvvbkQbZOY1slA00a6bef6e004c5b9c89', 'x-user-key': '1281072265'}
+【INFO】15:15:10:540 - business_requests.py : 43 >> Received code : 200
+【INFO】15:15:10:542 - business_requests.py : 44 >> Received body : {'responseTime': 0, 'webNotes': [{'noteId': '1733210110244_nid', 'createTime': 1733210110540, 'star': 0, 'remindTime': 0, 'remindType': 0, 'infoVersion': 1, 'infoUpdateTime': 1733210110540, 'groupId': None, 'title': 'test', 'summary': 'test', 'thumbnail': None, 'contentVersion': 1, 'contentUpdateTime': 1733210110710}]}
+【CASE】15:15:10:544 - caseMsgLogs.py : 86 >> Case run time:0.31s
+【INFO】15:15:10:545 - test02_Homepage_handle.py : 24 >> 用例初始化，清理首页便签数据
+【INFO】15:15:10:614 - del_note.py : 19 >> 删除首页所有便签-完成
+【CASE】15:15:10:696 - caseMsgLogs.py : 77 >> ==========================================================================================
+【CASE】15:15:10:698 - caseMsgLogs.py : 81 >> Method Name:testCase001_handle_gethomepage_rows,Class Name:TestHomePage
+【CASE】15:15:10:700 - caseMsgLogs.py : 82 >> Test Description:获取首页便签。
+handle：数值限制，当前用户存在2条便签，rows=1，查询首页便签
+预期：返回1条便签。
+【INFO】15:15:10:701 - test02_Homepage_handle.py : 31 >> 创建2条便签
+【CASE】15:15:11:068 - test02_Homepage_handle.py : 33 >> 获取首页便签,rows=1
+【INFO】15:15:11:070 - business_requests.py : 36 >> Request url: http://note-api.wps.cn/v3/notesvr/user/1281072265/home/startindex/0/rows/1/notes
+【INFO】15:15:11:072 - business_requests.py : 37 >> Request headers :{'cookie': 'wps_sid=V02SFV_WGVWoA-YKBmvvbkQbZOY1slA00a6bef6e004c5b9c89', 'x-user-key': '1281072265'}
+【INFO】15:15:11:143 - business_requests.py : 43 >> Received code : 200
+【INFO】15:15:11:146 - business_requests.py : 44 >> Received body : {'responseTime': 0, 'webNotes': [{'noteId': '1733210110841_nid', 'createTime': 1733210111165, 'star': 0, 'remindTime': 0, 'remindType': 0, 'infoVersion': 1, 'infoUpdateTime': 1733210111165, 'groupId': None, 'title': 'test', 'summary': 'test', 'thumbnail': None, 'contentVersion': 1, 'contentUpdateTime': 1733210111489}]}
+【CASE】15:15:11:147 - test02_Homepage_handle.py : 39 >> Received code : 200
+【CASE】15:15:11:149 - test02_Homepage_handle.py : 40 >> Received body : {'responseTime': 0, 'webNotes': [{'noteId': '1733210110841_nid', 'createTime': 1733210111165, 'star': 0, 'remindTime': 0, 'remindType': 0, 'infoVersion': 1, 'infoUpdateTime': 1733210111165, 'groupId': None, 'title': 'test', 'summary': 'test', 'thumbnail': None, 'contentVersion': 1, 'contentUpdateTime': 1733210111489}]}
+【CASE】15:15:11:150 - caseMsgLogs.py : 86 >> Case run time:0.45s
+【INFO】15:15:11:151 - test02_Homepage_handle.py : 24 >> 用例初始化，清理首页便签数据
+【INFO】15:15:11:224 - del_note.py : 19 >> 删除首页所有便签-完成
+【CASE】15:15:11:374 - caseMsgLogs.py : 77 >> ==========================================================================================
+【CASE】15:15:11:376 - caseMsgLogs.py : 81 >> Method Name:testCase002_handle_gethomepage_startindx,Class Name:TestHomePage
+【CASE】15:15:11:378 - caseMsgLogs.py : 82 >> Test Description:获取首页便签
+handle：数值限制；
+起始索引从1开始startindx：1，查询首页便签；
+预期：索引位置从1开始。
+【INFO】15:15:11:379 - test02_Homepage_handle.py : 77 >> 列表内构建2条数据
+【INFO】15:15:11:670 - business_requests.py : 36 >> Request url: http://note-api.wps.cn/v3/notesvr/user/1281072265/home/startindex/1/rows/0/notes
+【INFO】15:15:11:672 - business_requests.py : 37 >> Request headers :{'cookie': 'wps_sid=V02SFV_WGVWoA-YKBmvvbkQbZOY1slA00a6bef6e004c5b9c89', 'x-user-key': '1281072265'}
+【INFO】15:15:11:740 - business_requests.py : 43 >> Received code : 200
+【INFO】15:15:11:743 - business_requests.py : 44 >> Received body : {'responseTime': 0, 'webNotes': [{'noteId': '1733210111380_nid', 'createTime': 1733210111867, 'star': 0, 'remindTime': 0, 'remindType': 0, 'infoVersion': 1, 'infoUpdateTime': 1733210111867, 'groupId': None, 'title': 'test', 'summary': 'test', 'thumbnail': None, 'contentVersion': 1, 'contentUpdateTime': 1733210111828}]}
+【CASE】15:15:11:744 - caseMsgLogs.py : 86 >> Case run time:0.37s
+【INFO】15:15:11:746 - test02_Homepage_handle.py : 24 >> 用例初始化，清理首页便签数据
+【INFO】15:15:11:817 - del_note.py : 19 >> 删除首页所有便签-完成
+【CASE】15:15:12:076 - caseMsgLogs.py : 77 >> ==========================================================================================
+【CASE】15:15:12:078 - caseMsgLogs.py : 81 >> Method Name:testCase003_handle_startindex_notExists,Class Name:TestHomePage
+【CASE】15:15:12:080 - caseMsgLogs.py : 82 >> Test Description:获取首页便签
+startIndex字段缺失为None；
+预期：返回404。
+【INFO】15:15:12:081 - test02_Homepage_handle.py : 111 >> 列表内构建1条数据
+【INFO】15:15:12:213 - business_requests.py : 36 >> Request url: http://note-api.wps.cn/v3/notesvr/user/1281072265/home/startindex/rows/0/notes
+【INFO】15:15:12:216 - business_requests.py : 37 >> Request headers :{'cookie': 'wps_sid=V02SFV_WGVWoA-YKBmvvbkQbZOY1slA00a6bef6e004c5b9c89', 'x-user-key': '1281072265'}
+【INFO】15:15:12:260 - business_requests.py : 43 >> Received code : 404
+【INFO】15:15:12:262 - business_requests.py : 44 >> Received body : {'timestamp': '2024-12-03T07:15:12.574+0000', 'status': 404, 'error': 'Not Found', 'message': 'No message available', 'path': '/v3/notesvr/user/1281072265/home/startindex/rows/0/notes'}
+【CASE】15:15:12:263 - caseMsgLogs.py : 86 >> Case run time:0.19s
+【INFO】15:15:12:265 - test02_Homepage_handle.py : 24 >> 用例初始化，清理首页便签数据
+【INFO】15:15:12:363 - del_note.py : 19 >> 删除首页所有便签-完成
+【CASE】15:15:12:439 - caseMsgLogs.py : 77 >> ==========================================================================================
+【CASE】15:15:12:441 - caseMsgLogs.py : 81 >> Method Name:testCase004_handle_rows_noexists,Class Name:TestHomePage
+【CASE】15:15:12:442 - caseMsgLogs.py : 82 >> Test Description:获取首页便签
+startIndex字段缺失为None；
+预期：返回404。
+【INFO】15:15:12:444 - test02_Homepage_handle.py : 125 >> 列表内构建1条数据
+【INFO】15:15:12:598 - business_requests.py : 36 >> Request url: http://note-api.wps.cn/v3/notesvr/user/1281072265/home/startindex/0/rows/notes
+【INFO】15:15:12:601 - business_requests.py : 37 >> Request headers :{'cookie': 'wps_sid=V02SFV_WGVWoA-YKBmvvbkQbZOY1slA00a6bef6e004c5b9c89', 'x-user-key': '1281072265'}
+【INFO】15:15:12:646 - business_requests.py : 43 >> Received code : 404
+【INFO】15:15:12:648 - business_requests.py : 44 >> Received body : {'timestamp': '2024-12-03T07:15:12.960+0000', 'status': 404, 'error': 'Not Found', 'message': 'No message available', 'path': '/v3/notesvr/user/1281072265/home/startindex/0/rows/notes'}
+【CASE】15:15:12:649 - caseMsgLogs.py : 86 >> Case run time:0.21s
+【INFO】15:15:12:650 - test02_Homepage_handle.py : 24 >> 用例初始化，清理首页便签数据
+【INFO】15:15:12:740 - del_note.py : 19 >> 删除首页所有便签-完成
+【CASE】15:15:12:936 - caseMsgLogs.py : 77 >> ==========================================================================================
+【CASE】15:15:12:938 - caseMsgLogs.py : 81 >> Method Name:testCase005_handle_extra_permission,Class Name:TestHomePage
+【CASE】15:15:12:940 - caseMsgLogs.py : 82 >> Test Description:用户B获取用户A首页便签
+预期：返回401。
+【INFO】15:15:12:941 - test02_Homepage_handle.py : 138 >> 用户A列表内构建1条数据
+【INFO】15:15:13:080 - business_requests.py : 36 >> Request url: http://note-api.wps.cn/v3/notesvr/user/1281072265/home/startindex/0/rows/0/notes
+【INFO】15:15:13:083 - business_requests.py : 37 >> Request headers :{'cookie': 'wps_sid=V02SFV_WGVWoA-YKBmvvbkQbZOY1slA00a6bef6e004c5b9c90', 'x-user-key': '1281072264'}
+【INFO】15:15:13:166 - business_requests.py : 43 >> Received code : 401
+【INFO】15:15:13:168 - business_requests.py : 44 >> Received body : {'errorCode': -2010, 'errorMsg': ''}
+【CASE】15:15:13:170 - caseMsgLogs.py : 86 >> Case run time:0.23s
